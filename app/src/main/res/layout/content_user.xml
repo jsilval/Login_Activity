@@ -22,4 +22,15 @@
         android:layout_marginTop="58dp"
         android:id="@+id/textView"
         tools:text="hola" />
+
+    <Button
+        android:text="Logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="logOutUser"/>
+
+
 </RelativeLayout>

@@ -9,6 +9,7 @@ import co.droidmesa.jsilval.login_activity.Login.ProgressUI;
 import co.droidmesa.jsilval.login_activity.LoginActivity;
 import co.droidmesa.jsilval.login_activity.R;
 import co.droidmesa.jsilval.login_activity.UserActivity;
+import co.droidmesa.jsilval.login_activity.Utils.SessionManager;
 import co.droidmesa.jsilval.login_activity.Views.LoginViews;
 
 /**
@@ -63,6 +64,8 @@ public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
         if (success) {
             Intent i = new Intent(activity, UserActivity.class);
             activity.finish();
+            SessionManager sessionManager = new SessionManager(activity);
+            sessionManager.createLoginSession(mEmail, "my_token_session", "local");
             activity.startActivity(i);
 
         } else {

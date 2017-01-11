@@ -7,6 +7,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import co.droidmesa.jsilval.login_activity.Utils.SessionManager;
+
 public class UserActivity extends AppCompatActivity {
 
     @Override
@@ -24,6 +26,14 @@ public class UserActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        // check if user is logged in
+        SessionManager sessionManager = new SessionManager(this);
+        sessionManager.checkLogin();
     }
 
+    public void logOutUser(View view) {
+        SessionManager sessionManager = new SessionManager(this);
+        sessionManager.logoutUser();
+    }
 }
